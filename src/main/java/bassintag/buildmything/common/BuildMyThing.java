@@ -226,24 +226,24 @@ public class BuildMyThing extends JavaPlugin{
 							player.sendMessage(ChatColor.GOLD + "/bmt help " + ChatColor.GRAY + "display the plugin help");
 							
 							if(player.hasPermission("bmt.admin")){
-								player.sendMessage(ChatColor.GOLD + "/bmt p1 " + ChatColor.GRAY + "Set the first point to your current position");
-								player.sendMessage(ChatColor.GOLD + "/bmt p2 " + ChatColor.GRAY + "Set the second point to your current position");
-								player.sendMessage(ChatColor.GOLD + "/bmt spawn " + ChatColor.GRAY + "Set the spawn point to your current position");
-								player.sendMessage(ChatColor.GOLD + "/bmt create [room name] " + ChatColor.GRAY + "Create a new room with the supplied name");
-								player.sendMessage(ChatColor.GOLD + "/bmt remove [room name] " + ChatColor.GRAY + "Remove the room with the supplied name");
-								player.sendMessage(ChatColor.GOLD + "/bmt setlimit [room name] " + ChatColor.GRAY + "Change player limit of the room wih the supplied name");
-								player.sendMessage(ChatColor.GOLD + "/bmt reload" + ChatColor.GRAY + "Reload the plugin");
+								player.sendMessage(ChatColor.GOLD + "/bmt p1 " + ChatColor.GRAY + "Setzt den ersten Punkt an deiner Position");
+								player.sendMessage(ChatColor.GOLD + "/bmt p2 " + ChatColor.GRAY + "Setzt den zweiten Punkt an deiner Position");
+								player.sendMessage(ChatColor.GOLD + "/bmt spawn " + ChatColor.GRAY + "Setz den Spawn Punkt an deiner Position");
+								player.sendMessage(ChatColor.GOLD + "/bmt create [room name] " + ChatColor.GRAY + "Erstellt einen neuen Raum mit dem angegebenen Namen");
+								player.sendMessage(ChatColor.GOLD + "/bmt remove [room name] " + ChatColor.GRAY + "Entfernt einen Raum mit dem angegebenen Namen");
+								player.sendMessage(ChatColor.GOLD + "/bmt setlimit [room name] " + ChatColor.GRAY + "Ändert die Spieler Anzahl für den Raum");
+								player.sendMessage(ChatColor.GOLD + "/bmt reload" + ChatColor.GRAY + "Lead die Einstellunegn neu");
 							}
 							
 							if(player.hasPermission("bmt.default")){
-								player.sendMessage(ChatColor.GOLD + "/bmt join [room name] " + ChatColor.GRAY + "Join the room with the supplied name");
-								player.sendMessage(ChatColor.GOLD + "/bmt leave " + ChatColor.GRAY + "Leave your current room");
-								player.sendMessage(ChatColor.GOLD + "/bmt ready " + ChatColor.GRAY + "Toggle if you are ready ore not");
-								player.sendMessage(ChatColor.GOLD + "/bmt invite " + ChatColor.GRAY + "Broadcast a message to invite other players to join you");
-								player.sendMessage(ChatColor.GOLD + "/bmt playwith [username] " + ChatColor.GRAY + "Play with another player");
-								player.sendMessage(ChatColor.GOLD + "/bmt list " + ChatColor.GRAY + "Display a list of all rooms");
-								player.sendMessage(ChatColor.GOLD + "/bmt abondon " + ChatColor.GRAY + "Give up");
-								player.sendMessage(ChatColor.GOLD + "/bmt version " + ChatColor.GRAY + "Display the current version");
+								player.sendMessage(ChatColor.GOLD + "/bmt join [room name] " + ChatColor.GRAY + "Betritt den Raum mit dem angegebenen Namen");
+								player.sendMessage(ChatColor.GOLD + "/bmt leave " + ChatColor.GRAY + "Verlasse den aktuellen Raum");
+								player.sendMessage(ChatColor.GOLD + "/bmt ready " + ChatColor.GRAY + "Gibt an ob die Startbereit bist , oder nicht");
+								player.sendMessage(ChatColor.GOLD + "/bmt invite " + ChatColor.GRAY + "Sendet eine Nachricht an andere Spieler, die deinen Raum betretten sollen");
+								player.sendMessage(ChatColor.GOLD + "/bmt playwith [username] " + ChatColor.GRAY + "Spiele mit einem anderen Spieler");
+								player.sendMessage(ChatColor.GOLD + "/bmt list " + ChatColor.GRAY + "Zeigt alle verfuegbaren Raeume an");
+								player.sendMessage(ChatColor.GOLD + "/bmt abondon " + ChatColor.GRAY + "Spiel aufgeben");
+								player.sendMessage(ChatColor.GOLD + "/bmt version " + ChatColor.GRAY + "Zeigt die aktuelle Version");
 							}
 						}else {
 							ChatUtil.send(player, translator.get("wrong-command"));
@@ -252,7 +252,7 @@ public class BuildMyThing extends JavaPlugin{
 					ChatUtil.send(player, translator.get("no-command"));
 				}
 			} else {
-				sender.sendMessage("Sorry this command can only be run by a player");
+				sender.sendMessage("Dieses Komando kann nur bei einem Spieler angewendet werden");
 			}
 		}
 		return false;
@@ -267,7 +267,7 @@ public class BuildMyThing extends JavaPlugin{
 
 	private void loadConfig() {
 		    this.getConfig().options().copyDefaults(true);
-		    this.getConfig().options().header("Welcome to the Build My Thing configuration file !");
+		    this.getConfig().options().header("Willkommen beim Build My Thing Konfiguration Manager!");
 		    if(!this.getConfig().contains("words")){
 		    	//I didn't used .addDefault to force the config to generate.
 		    	this.getConfig().set("words", DEFAULT_WORDS);
