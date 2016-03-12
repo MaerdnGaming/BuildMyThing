@@ -36,7 +36,7 @@ public class LanguageUtil {
 			config.set("language.player-already-ingame", "Du bist bereits in einem Spiel Raum");
 			config.set("language.player-not-online", "Dieser Spieler ist nicht online");
 			config.set("language.player-not-playing", "Dieser Spieler spielt gerade kein Build My Thing");
-			config.set("language.wrong-command", "Ubekanntes Komando, nutze\"" + ChatColor.YELLOW + "/bmt help" + ChatColor.RESET + "\"fuer eine Komando Liste");
+			config.set("language.wrong-command", "Unbekanntes Komando, nutze\"" + ChatColor.YELLOW + "/bmt help" + ChatColor.RESET + "\"fuer eine Komando Liste");
 			config.set("language.no-command", "Kein Sub-Komando, nutze\"" + ChatColor.YELLOW + "/bmt help" + ChatColor.RESET + "\"fuer eine Komando Liste");
 			config.set("language.room-list", "Raum Liste:");
 			config.set("language.no-command-while-ingame", "Komando ist im Spiel deaktiviert");
@@ -62,7 +62,7 @@ public class LanguageUtil {
 			config.set("language.word-reveal", ChatColor.GREEN + "Das Wort lautet: " + ChatColor.BOLD + "$word");
 			config.set("language.score", ChatColor.GREEN + "Score:");
 			config.set("language.score-player", ChatColor.GREEN +"$player" + ChatColor.WHITE + " [$score]");
-			config.set("language.invite", "$player wants to play Build My Thing, use \"" + ChatColor.YELLOW + "/bmt playwith $player" + ChatColor.RESET + "\" to play with him");
+			config.set("language.invite", "$player moechte mit dir Build My Thing, nutze \"" + ChatColor.YELLOW + "/bmt playwith $player" + ChatColor.RESET + "\" um mit dem Spieler zu spielen");
 			config.set("language.join", "$player betritt das Spiel ($currentplayers / $maxplayers)");
 			config.set("language.room-starting", "Raum ist voll, Spiel startet in 5 Sekunden");
 			config.set("language.room-started", "Raum ist bereits gestartet!");
@@ -73,8 +73,8 @@ public class LanguageUtil {
 			config.set("language.already-reported", "Du hast diesen Spieler bereits gemeldet!");
 			config.set("language.room-updated", "Raum aktualisiert!");
 			config.set("language.builder-abondon", "Der Builder hat aufgegeben!");
-			config.set("language.player-penalty", "$player recieved a penalty! " + ChatColor.RED + "[-$penalty]");
-			config.set("language.reload", "Configuration neu geladen, alle alufenden Spiele wurden gestopt!");
+			config.set("language.player-penalty", "$player strafe erhalten! " + ChatColor.RED + "[-$penalty]");
+			config.set("language.reload", "Configuration neu geladen, alle laufende Spiele wurden gestopt!");
 			config.set("language.broadcast-win", "$player hat ein Build My Thing Spiel gewonnen $room!");
 		} else if(language.toLowerCase().startsWith("fr")){
 			config.set("language.p1-set", "Le point 1 se trouve maintenant � votre position");

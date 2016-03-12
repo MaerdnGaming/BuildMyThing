@@ -223,7 +223,7 @@ public class BuildMyThing extends JavaPlugin{
 						} else if(args[0].equals("help")) {
 							ChatUtil.send(player, "List of commands:");
 							
-							player.sendMessage(ChatColor.GOLD + "/bmt help " + ChatColor.GRAY + "display the plugin help");
+							player.sendMessage(ChatColor.GOLD + "/bmt help " + ChatColor.GRAY + "Zeigt die Plugin Hilfe an");
 							
 							if(player.hasPermission("bmt.admin")){
 								player.sendMessage(ChatColor.GOLD + "/bmt p1 " + ChatColor.GRAY + "Setzt den ersten Punkt an deiner Position");
@@ -232,13 +232,13 @@ public class BuildMyThing extends JavaPlugin{
 								player.sendMessage(ChatColor.GOLD + "/bmt create [room name] " + ChatColor.GRAY + "Erstellt einen neuen Raum mit dem angegebenen Namen");
 								player.sendMessage(ChatColor.GOLD + "/bmt remove [room name] " + ChatColor.GRAY + "Entfernt einen Raum mit dem angegebenen Namen");
 								player.sendMessage(ChatColor.GOLD + "/bmt setlimit [room name] " + ChatColor.GRAY + "Ändert die Spieler Anzahl für den Raum");
-								player.sendMessage(ChatColor.GOLD + "/bmt reload" + ChatColor.GRAY + "Lead die Einstellunegn neu");
+								player.sendMessage(ChatColor.GOLD + "/bmt reload" + ChatColor.GRAY + "Relodet die Einstellunegn neu");
 							}
 							
 							if(player.hasPermission("bmt.default")){
 								player.sendMessage(ChatColor.GOLD + "/bmt join [room name] " + ChatColor.GRAY + "Betritt den Raum mit dem angegebenen Namen");
 								player.sendMessage(ChatColor.GOLD + "/bmt leave " + ChatColor.GRAY + "Verlasse den aktuellen Raum");
-								player.sendMessage(ChatColor.GOLD + "/bmt ready " + ChatColor.GRAY + "Gibt an ob die Startbereit bist , oder nicht");
+								player.sendMessage(ChatColor.GOLD + "/bmt ready " + ChatColor.GRAY + "Gibt an ob du Startbereit bist, oder nicht");
 								player.sendMessage(ChatColor.GOLD + "/bmt invite " + ChatColor.GRAY + "Sendet eine Nachricht an andere Spieler, die deinen Raum betretten sollen");
 								player.sendMessage(ChatColor.GOLD + "/bmt playwith [username] " + ChatColor.GRAY + "Spiele mit einem anderen Spieler");
 								player.sendMessage(ChatColor.GOLD + "/bmt list " + ChatColor.GRAY + "Zeigt alle verfuegbaren Raeume an");
