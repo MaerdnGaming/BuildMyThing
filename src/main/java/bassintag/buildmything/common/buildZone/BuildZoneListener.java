@@ -20,7 +20,6 @@ import org.bukkit.inventory.ItemStack;
 
 import bassintag.buildmything.common.BuildMyThing;
 import bassintag.buildmything.common.ChatUtil;
-import bassintag.buildmything.common.update.UpdateChecker;
 
 public class BuildZoneListener implements Listener{
 	
@@ -119,20 +118,6 @@ public class BuildZoneListener implements Listener{
 	public void onPlayerHungerChange(FoodLevelChangeEvent event){
 		if(event.getEntity().hasMetadata("inbmt")){
 			event.setCancelled(true);
-		}
-	}
-	
-	@EventHandler
-	public void onPlayerJoin(PlayerJoinEvent event){
-		if(event.getPlayer().hasPermission("bmt.admin")){
-			if(instance.getConfig().getBoolean("update-checker")){
-				if(UpdateChecker.isOutdated(instance)){
-					String version = UpdateChecker.getLastVersion("http://dev.bukkit.org/bukkit-plugins/build-my-thing/files.rss");
-					ChatUtil.send(event.getPlayer(),ChatColor.RED +  "New version available: " + ChatColor.RESET + version + ChatColor.RED + "\n Get it here:");
-					event.getPlayer().sendMessage("  http://dev.bukkit.org/bukkit-plugins/build-my-thing/files");
-					event.getPlayer().sendMessage(ChatColor.GRAY + "Update checker can be disabled in the config.yml");
-				}
-			}
 		}
 	}
 	
