@@ -18,7 +18,7 @@ public class LanguageUtil {
 		if(config.contains(truePath.trim())){
 			return config.getString(truePath.trim());
 		}	else {
-			return "null";
+			return "Fehler im Plugin";
 		}
 	}
 	
@@ -48,21 +48,21 @@ public class LanguageUtil {
 			config.set("language.everyone-found", "Alle haben das richtige Wort gefunden, sehr gut!");
 			config.set("language.next-round", "Die naechste Runde startet in 5 Sekunden");
 			config.set("language.builder", "$player is building this time!");
-			config.set("language.time", "Du hast" + ChatColor.BOLD +  " 90 Sekunden" + ChatColor.RESET + " um das richtige Wort zu finden!");
+			config.set("language.time", "Du hast" + ChatColor.BOLD +  " 90_Sekunden" + ChatColor.RESET + " um das richtige Wort zu finden!");
 			config.set("language.word", ChatColor.RED + "Das richtige Wort lautet: " + ChatColor.BOLD + "$word");
 			config.set("language.ready", "$player ist bereit!");
 			config.set("language.not-ready", "$player ist nicht laenger bereit!");
 			config.set("language.everyone-ready", "Alle sind bereit, das Spiel wird gestartet!");
 			config.set("language.game-over", ChatColor.BOLD + "Spiel ist zuende");
 			config.set("language.winner", ChatColor.GREEN + "Gewinner: " + ChatColor.BOLD + "$player" + ChatColor.RESET + " [$score]");
-			config.set("language.60sec", "60 bis zum Spiel!");
-			config.set("language.30sec", "30 bis zum Spiel!");
-			config.set("language.10sec", "10 bis zum Spiel!");
+			config.set("language.60sec", "60_bis_zum_Spiel!");
+			config.set("language.30sec", "30_bis_zum_Spiel!");
+			config.set("language.10sec", "10_bis_zum_Spiel!");
 			config.set("language.time-out", ChatColor.RED + "Zeit abgelaufen! Das naechste Spiel startet in 5 Sekunden!");
 			config.set("language.word-reveal", ChatColor.GREEN + "Das Wort lautet: " + ChatColor.BOLD + "$word");
-			config.set("language.score", ChatColor.GREEN + "Score:");
+			config.set("language.score", ChatColor.GREEN + "Spielstand:");
 			config.set("language.score-player", ChatColor.GREEN +"$player" + ChatColor.WHITE + " [$score]");
-			config.set("language.invite", "$player moechte mit dir Build My Thing, nutze \"" + ChatColor.YELLOW + "/bmt playwith $player" + ChatColor.RESET + "\" um mit dem Spieler zu spielen");
+			config.set("language.invite", "$player moechte mit dir Build My Thing spielen, nutze \"" + ChatColor.YELLOW + "/bmt playwith $player" + ChatColor.RESET + "\" um mit dem Spieler zu spielen");
 			config.set("language.join", "$player betritt das Spiel ($currentplayers / $maxplayers)");
 			config.set("language.room-starting", "Raum ist voll, Spiel startet in 5 Sekunden");
 			config.set("language.room-started", "Raum ist bereits gestartet!");
