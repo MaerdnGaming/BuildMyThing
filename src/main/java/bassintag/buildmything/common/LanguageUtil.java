@@ -59,7 +59,7 @@ public class LanguageUtil {
 			config.set("language.30sec", "30Sek!");
 			config.set("language.10sec", "10Sek!");
 			config.set("language.time-out", ChatColor.RED + "Zeit abgelaufen! Das naechste Spiel startet in 5 Sekunden!");
-			config.set("language.word-reveal", ChatColor.GREEN + "Das Wort lautet: " + ChatColor.BOLD + "$word");
+			config.set("language.word-reveal", ChatColor.GREEN + "Das Wort lautet:" + ChatColor.BOLD + "$word");
 			config.set("language.score", ChatColor.GREEN + "Spielstand:");
 			config.set("language.score-player", ChatColor.GREEN +"$player" + ChatColor.WHITE + " [$score]");
 			config.set("language.invite", "$player moechte mit dir Build My Thing spielen, nutze \"" + ChatColor.YELLOW + "/bmt playwith $player" + ChatColor.RESET + "\" um mit dem Spieler zu spielen");
