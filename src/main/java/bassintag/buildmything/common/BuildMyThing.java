@@ -35,7 +35,7 @@ public class BuildMyThing extends JavaPlugin{
 	public BuildMyThing plugin = this;
 	public LanguageUtil translator;
 	
-	public static final List<String> DEFAULT_WORDS = new ArrayList<String>(Arrays.asList(new String[] {"Affentheater", "Armdrücken", "Arzt", "aufstehen", "Auto fahren", "Autoreparatur", "Baby", "Bär", "Biene Maja", "Bierfaß", "Blaumeise", "Bleifuß", "Brustschwimmen", "Burgturm", "Clown", "Detektiv", "Dickkopf", "Dirigent", "Dompteur", "Dornröschen", "Drehwurm", "ein Bild malen", "einen Brief schreiben", "einen Fisch angeln", "Eisbär", "Elefant", "Elvis", "Emil", "Eskimo", "Essen kochen", "Fahrrad fahren", "Federball", "Federhalter", "Fee", "fernsehen", "Fernseher", "Flaschenhals", "Fliegenfänger", "Flohzirkus", "Flügelschlag", "Folterkammer", "Fotomodell", "Friseuse", "fröhlich", "Frosch", "Fußball spielen", "Fußball", "Fußballer", "Gabelstapler", "Gitarre spielen", "Handschuh", "Handstock", "Haarföhn", "Herzensbrecher", "Hexe", "Hosenträger", "Indianer", "Kino", "Museum", "joggen", "Kaffee", "Kameltreiber", "Känguru ", "Käsefüße", "Kellnerin", "Kettenraucher", "Klavier", "Klobrille", "Knopf", "Kopfschmerzen", "Kreissäge", "Kuhglocke", "Kurschatten", "Lachsack", "Löwe", "Lehrerin", "Leichengruft", "Mantel", "Matrose", "Maus", "Messerwerfer", "Mönch", "Motorrad", "Müllmann", "Nagelkopf", "Nasenbohrer", "Obstmesser", "Otto", "Pferd"}));
+	public static final List<String> DEFAULT_WORDS = new ArrayList<String>(Arrays.asList(new String[] {"house", "creeper", "pickaxe", "boat", "dog", "apple", "bow", "bone", "minecart", "zombie", "pig", "chicken", "skeleton", "tree", "cloud", "sun", "moon", "cave", "slime", "flower", "mountain", "volcano", "potato", "mushroom", "sword", "armor", "diamond", "cat", "book", "sheep", "squid", "enderman", "snowman", "bread", "wheat"}));
 	
 	private List<String> words = new ArrayList<String>();
 	
@@ -100,7 +100,7 @@ public class BuildMyThing extends JavaPlugin{
 							if(args.length > 1){
 								if(player.hasMetadata("bmtp1") && player.hasMetadata("bmtp2") && player.hasMetadata("bmtspec")){
 									if(this.getRoomByName(args[1]) != null){
-										ChatUtil.send(player, "Ein Raum mit diesem Namen ist bereits vorhanden!");
+										ChatUtil.send(player, "Ein Raum mit diesem Namen existiert bereits!");
 									} else {
 										Location loc1 = LocationUtil.StringToLoc(player.getMetadata("bmtp1").get(0).asString());
 										Location loc2 = LocationUtil.StringToLoc(player.getMetadata("bmtp2").get(0).asString());
@@ -112,10 +112,10 @@ public class BuildMyThing extends JavaPlugin{
 											}
 										}
 										this.rooms.add(b);
-										ChatUtil.send(player, translator.get("Raum-erstellt"));
+										ChatUtil.send(player, translator.get("room-created"));
 									}
 								} else {
-									ChatUtil.send(player, translator.get("Raum-kann-nicht-erstellt-werden"));
+									ChatUtil.send(player, translator.get("room-cannot-create"));
 								}
 							} else {
 								ChatUtil.send(player, translator.get("room-precize"));
@@ -125,9 +125,9 @@ public class BuildMyThing extends JavaPlugin{
 								if(this.getRoomByName(args[1]) != null){
 									this.getRoomByName(args[1]).remove(getConfig());
 									this.rooms.remove(this.getRoomByName(args[1]));
-									ChatUtil.send(player, translator.get("Raum-geloecht"));
+									ChatUtil.send(player, translator.get("room-deleted"));
 								} else {
-									ChatUtil.send(player, translator.get("Raum-existiert-nicht"));
+									ChatUtil.send(player, translator.get("room-doesnt-exist"));
 								}
 							} else {
 								ChatUtil.send(player, translator.get("room-precize"));
@@ -138,10 +138,10 @@ public class BuildMyThing extends JavaPlugin{
 									if(args.length > 2){
 										this.getRoomByName(args[1]).stop();
 										this.getRoomByName(args[1]).setMaxPlayers(Integer.valueOf(args[2]));
-										ChatUtil.send(player, translator.get("Raum-geupdatet"));
+										ChatUtil.send(player, translator.get("room-updated"));
 									}
 								} else {
-									ChatUtil.send(player, translator.get("Raum-existiert-nicht"));
+									ChatUtil.send(player, translator.get("room-doesnt-exist"));
 								}
 							} else {
 								ChatUtil.send(player, translator.get("room-precize"));
@@ -156,13 +156,13 @@ public class BuildMyThing extends JavaPlugin{
 							ChatUtil.send(player, "Version: " + this.getDescription().getVersion());
 						} else if(args[0].equals("join") && player.hasPermission("bmt.default")){
 							if(player.hasMetadata("inbmt")){
-								ChatUtil.send(player, "Du bist bereits in einem Spiel Raum");
+								ChatUtil.send(player, "You are already in a game room");
 							} else {
 								if(args.length > 1){
 									if(this.getRoomByName(args[1]) != null){
 										this.getRoomByName(args[1]).join(player);
 									} else {
-										ChatUtil.send(player, translator.get("Raum-existiert-nicht"));
+										ChatUtil.send(player, translator.get("room-doesnt-exist"));
 									}
 								} else {
 									ChatUtil.send(player, translator.get("room-precize"));
@@ -172,34 +172,34 @@ public class BuildMyThing extends JavaPlugin{
 							if(player.hasMetadata("inbmt")){
 								this.getRoomByName(player.getMetadata("inbmt").get(0).asString()).leave(player);
 							} else {
-								ChatUtil.send(player, translator.get("Spieler-nicht-ingame"));
+								ChatUtil.send(player, translator.get("player-not-ingame"));
 							}
 						} else if(args[0].equals("ready") && player.hasPermission("bmt.default")){
 							if(player.hasMetadata("inbmt")){
 								this.getRoomByName(player.getMetadata("inbmt").get(0).asString()).setReady(player);
 							} else {
-								ChatUtil.send(player, translator.get("Spieler-nicht-ingame"));
+								ChatUtil.send(player, translator.get("player-not-ingame"));
 							}
 						} else if(args[0].equals("list") && player.hasPermission("bmt.default")){
-							ChatUtil.send(player, translator.get("Raum-liste"));
+							ChatUtil.send(player, translator.get("room-list"));
 							for(BuildZone b : this.rooms){
-								player.sendMessage(ChatColor.YELLOW + "* " + ChatColor.AQUA + b.getName() + ChatColor.RESET +  " | " + b.getPlayers().size() + ChatColor.YELLOW + "/" + ChatColor.RESET + b.getMaxPlayers() + " | (" + (b.isStarted() ? ChatColor.RED + "STARDED" : ChatColor.GREEN + "OPEN") + ChatColor.RESET + ")");
+								player.sendMessage(ChatColor.YELLOW + "* " + ChatColor.AQUA + b.getName() + ChatColor.RESET +  " | " + b.getPlayers().size() + ChatColor.YELLOW + "/" + ChatColor.RESET + b.getMaxPlayers() + " | (" + (b.isStarted() ? ChatColor.RED + "STARTED" : ChatColor.GREEN + "OPEN") + ChatColor.RESET + ")");
 							}
 						} else if(args[0].equals("invite") && player.hasPermission("bmt.default")){
 							if(player.hasMetadata("inbmt")){
 								this.getRoomByName(player.getMetadata("inbmt").get(0).asString()).abondon(player);
 							} else {
-								ChatUtil.send(player, translator.get("Spieler-nicht-ingame"));
+								ChatUtil.send(player, translator.get("player-not-ingame"));
 							}
 						} else if(args[0].equals("abondon") && player.hasPermission("bmt.default")){
 							if(player.hasMetadata("inbmt")){
 								ChatUtil.broadcast(translator.get("invite").replace("$player", player.getName()));
 							} else {
-								ChatUtil.send(player, translator.get("Spieler-nicht-ingame"));
+								ChatUtil.send(player, translator.get("player-not-ingame"));
 							}
 						} else if(args[0].equals("playwith") && player.hasPermission("bmt.default")){
 							if(player.hasMetadata("inbmt")){
-								ChatUtil.send(player, translator.get("Spieler-ist-bereits-im-Spiel"));
+								ChatUtil.send(player, translator.get("player-already-ingame"));
 							} else {
 								if(args.length > 1){
 									if(Bukkit.getPlayer(args[1]) != null){
@@ -208,20 +208,20 @@ public class BuildMyThing extends JavaPlugin{
 											if(p.hasMetadata("inbmt")){
 												this.getRoomByName(p.getMetadata("inbmt").get(0).asString()).join(player);
 											} else {
-												ChatUtil.send(player, translator.get("Diese-Spieler-spielt-nicht"));
+												ChatUtil.send(player, translator.get("player-not-playing"));
 											}
 										} else {
-											ChatUtil.send(player, translator.get("Spieler-nicht-online"));
+											ChatUtil.send(player, translator.get("player-not-online"));
 										}
 									} else {
-										ChatUtil.send(player, translator.get("Spieler-nicht-online"));
+										ChatUtil.send(player, translator.get("player-not-online"));
 									}
 								} else {
 									ChatUtil.send(player, translator.get("room-precize"));
 								}
 							}
 						} else if(args[0].equals("help")) {
-							ChatUtil.send(player, "Liste der Komandos:");
+							ChatUtil.send(player, "Komando liste:");
 							
 							player.sendMessage(ChatColor.GOLD + "/bmt help " + ChatColor.GRAY + "Zeigt die Plugin Hilfe an");
 							
@@ -236,7 +236,7 @@ public class BuildMyThing extends JavaPlugin{
 							}
 							
 							if(player.hasPermission("bmt.default")){
-								player.sendMessage(ChatColor.GOLD + "/bmt join [room name] " + ChatColor.GRAY + "Betrete den Raum mit dem angegebenen Namen");
+								player.sendMessage(ChatColor.GOLD + "/bmt join [room name] " + ChatColor.GRAY + "Betritt den Raum mit dem angegebenen Namen");
 								player.sendMessage(ChatColor.GOLD + "/bmt leave " + ChatColor.GRAY + "Verlasse den aktuellen Raum");
 								player.sendMessage(ChatColor.GOLD + "/bmt ready " + ChatColor.GRAY + "Gibt an ob du Startbereit bist, oder nicht");
 								player.sendMessage(ChatColor.GOLD + "/bmt invite " + ChatColor.GRAY + "Sendet eine Nachricht an andere Spieler, die deinen Raum betretten sollen");
