@@ -183,7 +183,7 @@ public class BuildMyThing extends JavaPlugin{
 						} else if(args[0].equals("list") && player.hasPermission("bmt.default")){
 							ChatUtil.send(player, translator.get("room-list"));
 							for(BuildZone b : this.rooms){
-								player.sendMessage(ChatColor.YELLOW + "* " + ChatColor.AQUA + b.getName() + ChatColor.RESET +  " | " + b.getPlayers().size() + ChatColor.YELLOW + "/" + ChatColor.RESET + b.getMaxPlayers() + " | (" + (b.isStarted() ? ChatColor.RED + "getsratet" : ChatColor.GREEN + "Offen") + ChatColor.RESET + ")");
+								player.sendMessage(ChatColor.YELLOW + "* " + ChatColor.AQUA + b.getName() + ChatColor.RESET +  " | " + b.getPlayers().size() + ChatColor.YELLOW + "/" + ChatColor.RESET + b.getMaxPlayers() + " | (" + (b.isStarted() ? ChatColor.RED + "STARTED" : ChatColor.GREEN + "OPEN") + ChatColor.RESET + ")");
 							}
 						} else if(args[0].equals("invite") && player.hasPermission("bmt.default")){
 							if(player.hasMetadata("inbmt")){
