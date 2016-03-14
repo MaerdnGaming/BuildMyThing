@@ -351,6 +351,7 @@ public class BuildZone implements Listener {
 	}
 	
 	public void sendMessage(String message){
+		System.out.println("sendMessage("+message+")");
 		for(Player p : score.keySet()){
 			ChatUtil.send(p, message);
 		}
